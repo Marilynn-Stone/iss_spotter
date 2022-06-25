@@ -106,7 +106,6 @@ const nextISSTimesForMyLocation = function(callback) {
         const myFlytimes = flyTimes;
         for (let myFlytime of myFlytimes) {
           const datetime = new Date(0);
-          console.log('datetime:', datetime);
           datetime.setUTCSeconds(myFlytime.risetime);
           console.log(`Next pass at ${datetime} (Pacific Daylight Time) for ${myFlytime.duration} seconds!`);
         }
@@ -116,4 +115,4 @@ const nextISSTimesForMyLocation = function(callback) {
   });
 };
 
-module.exports = { fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes, nextISSTimesForMyLocation };
+module.exports = { nextISSTimesForMyLocation };
